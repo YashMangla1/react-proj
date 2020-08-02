@@ -113,7 +113,7 @@ class App extends Component {
     //it executes this render method and not just the return expression
 
     render() {
-        console.log('[App.mjs] render');
+        console.log('[App.mjs] render', this.state);
         let persons = null;
         if (this.state.showPersons) {
             persons = (
@@ -128,22 +128,20 @@ class App extends Component {
                 //     color: 'black'
                 // };
             );
+        } else {
+            persons = null
         }
-
-
-
-
 
         return (
 
             <div className={classes.App}>
                 <button
                     onClick={() => {
-                        this.setState({ showCockpit: false });
+                        this.setState({ showCockpit: false, showPersons: false });
                     }}>
                     Remove Cockpit
                 </button>
-                {this.state.Cockpit ? (
+                {this.state.showCockpit ? (
                     <Cockpit
                         title={this.props.appTitle}
                         showPersons={this.state.showPersons}

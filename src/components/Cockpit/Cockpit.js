@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import classes from './Cockpit.css';
 
 const cockpit = (props) => {
-
+    console.log("pit", props)
     useEffect(() => {
         console.log('[Cockpit.js] useEffect');
         //http request
         setTimeout(() => {
-            alert('Saved data to the cloud!');
+            // alert('Saved data to the cloud!');
         }, 1000);
         return () => {
             console.log('[Cockpit.js] cleanup work in useEffect');
